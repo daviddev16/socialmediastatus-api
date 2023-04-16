@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/devops/api/status")
+@RequestMapping("/api/status")
 public class StatusController {
 
     private LiveStatusService statusService;
