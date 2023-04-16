@@ -16,7 +16,7 @@ Build and Run with Docker:
 ```
 cd socialmediastatus-api
 docker build -t daviddev16/socialmediastatus-api .
-docker run -p 8080:8080 daviddev16/socialmediastatus-api
+docker run -p 5002:5002 daviddev16/socialmediastatus-api
 ```
 <h2>Usage</h2>
 
