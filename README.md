@@ -1,7 +1,7 @@
 <h1>Social Media Status API</h1>
 
 
-This API is used for monitoring status and health check from [Social Media API](https://github.com/GabrielBrisson/SocialMediaAPI).
+This API is used for monitoring status and health check of [Social Media API](https://github.com/GabrielBrisson/SocialMediaAPI).
 
 
 <h2>Installation</h2>
