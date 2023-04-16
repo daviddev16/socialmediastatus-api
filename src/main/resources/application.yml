@@ -1,0 +1,22 @@
+
+server:
+  port: 5002
+
+spring:
+  application:
+    name: socialmediastatus-api
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 2000
+  httpclient:
+    enabled: true
+
+#Configurado para checar no IP privado da VPN
+api:
+  baseUrl: http://10.0.0.39:3000
+  endpoint: /api/status
+
