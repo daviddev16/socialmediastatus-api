@@ -1,7 +1,6 @@
 package live.socialmedia.client;
 
 
-import live.socialmedia.model.ApiStatusResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,13 +11,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface SocialMediaApiStatusClient {
 
     @GetMapping("${api.endpoint}")
-    ApiStatusResponse getApiStatus();
+    String getApiStatus();
 
     @Component
     final class SocialMediaApiStatusClientFallback implements SocialMediaApiStatusClient {
 
         @Override
-        public ApiStatusResponse getApiStatus() {
+        public String getApiStatus() {
             return null;
         }
 

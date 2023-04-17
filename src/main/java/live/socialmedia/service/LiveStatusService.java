@@ -1,7 +1,6 @@
 package live.socialmedia.service;
 
 import live.socialmedia.client.SocialMediaApiStatusClient;
-import live.socialmedia.model.ApiStatusResponse;
 import live.socialmedia.model.LiveStatus;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
@@ -19,17 +18,19 @@ public class LiveStatusService {
     @NonNull
     public LiveStatus getLiveStatus() {
         long last = System.currentTimeMillis();
-        ApiStatusResponse apiStatusResponse;
+        String apiStatusResponse;
         try {
             apiStatusResponse = socialMediaApiStatus.getApiStatus();
         } catch (Exception e) {
             apiStatusResponse = null;
         }
+        if (apiStatusResponse!=null) {
+        }
         return new LiveStatus(String.format("%dms", (System.currentTimeMillis() - last)),
                 isAvailable(apiStatusResponse));
     }
 
-    private boolean isAvailable(@Nullable ApiStatusResponse apiStatusResponse) {
-        return !(apiStatusResponse == null || !apiStatusResponse.getStatus().equalsIgnoreCase("RUNNING"));
+    private boolean isAvailable(@Nullable String apiStatusResponse) {
+        return apiStatusResponse != null && apiStatusResponse.equalsIgnoreCase("RUNNING");
     }
 }
